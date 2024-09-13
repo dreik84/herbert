@@ -1,13 +1,23 @@
 /*
- * Программа для преобразования галлонов в литры
+ * Программа отображает таблицу преобразований галлонов в литры
  */
-class GalToLit {
+class GalToLitTable {
 	public static void main(String[] args) {
-		double gallons;  // хранит количество галлонов
-		double liters;   // хранит результат преобразования в литры
+		double gallons, liters, litPerGal;
+		int counter;
 
-		gallons = 10;    // начать с 10 галлонов
-		liters = gallons * 3.7854;  // преобразование в литры
-		System.out.println(gallons + " галлонов соответствует " + liters + " литрам");
+		litPerGal = 3.7854;
+		counter = 0;
+		for (gallons = 1; gallons <= 100; gallons++) {
+			liters = gallons * litPerGal; // преобразование в литры
+			System.out.println(gallons + " галлонов соответствует " + liters + "литрам");
+
+			counter++;
+			// После каждой 10-й строки вывести пустую строку
+			if (counter == 10) {
+				System.out.println();
+				counter = 0; // сброс счетчика
+			}
+		}
 	}
 }
