@@ -1,20 +1,20 @@
 /*
- * Программа отображает таблицу преобразований галлонов в литры
+ * Программа отображает таблицу преобразования дюймов в метры
  */
-class GalToLitTable {
+class IncToMetTable {
 	public static void main(String[] args) {
-		double gallons, liters, litPerGal;
+		double inches, meters, incPerMetr;
 		int counter;
 
-		litPerGal = 3.7854;
+		incPerMetr = 39.37;
 		counter = 0;
-		for (gallons = 1; gallons <= 100; gallons++) {
-			liters = gallons * litPerGal; // преобразование в литры
-			System.out.println(gallons + " галлонов соответствует " + liters + "литрам");
+		for (inches = 1; inches <= 100; inches++) {
+			meters = inches * incPerMetr; // преобразование в метры
+			System.out.println(inches + " дюймов соответствует " + meters + "метрам");
 
 			counter++;
-			// После каждой 10-й строки вывести пустую строку
-			if (counter == 10) {
+			// После каждой 12-й строки вывести пустую строку
+			if (counter == 12) {
 				System.out.println();
 				counter = 0; // сброс счетчика
 			}
