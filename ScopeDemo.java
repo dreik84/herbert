@@ -1,6 +1,6 @@
 // Демонстрация области видимости блока
 class ScopeDemo {
-	public static void main(Strign[] args) {
+	public static void main(String[] args) {
 		int x;       // переменная известна всему коду внутри main()
 		
 		x = 10;
