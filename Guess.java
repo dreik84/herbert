@@ -8,6 +8,12 @@ class Guess {
 
 		ch = (char) System.in.read(); // чтение символа с клавиатуры
 		if (ch == answer) System.out.println(" ** Правильно ** ");
-		else System.out.println("...Увы, не угадали.");
+		else {
+			System.out.print("...Увы, не угадали. Задуманная буква находится ");
+
+			// Вложенный оператор if
+			if (ch < answer) System.out.println("дальше по алфавиту.");
+			else System.out.println("ближе по алфавиту.");
+		}
 	}
 }
