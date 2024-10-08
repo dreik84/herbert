@@ -8,5 +8,6 @@ class Guess {
 
 		ch = (char) System.in.read(); // чтение символа с клавиатуры
 		if (ch == answer) System.out.println(" ** Правильно ** ");
+		else System.out.println("...Увы, не угадали.");
 	}
 }
