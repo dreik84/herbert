@@ -8,4 +8,9 @@ class Vehicle {
 	int range() {
 		return fuelcap * mpg;
 	}
+
+	// Рассчетывает объем топлива, необходимого для поездки на заданное расстояние
+	double fuelNeeded(int miles) {
+		return (double) miles / mpg;
+	}
 }
