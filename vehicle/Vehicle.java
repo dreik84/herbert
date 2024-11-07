@@ -4,6 +4,13 @@ class Vehicle {
 	int fuelcap;    // запас топлива в галлонах
 	int mpg;        // расход топлива в милях на галлон
 	
+	// Конструктор для класса Vehicle
+	Vehicle(int p, int f, int m) {
+		passengers = p;
+		fuelcap = f;
+		mpg = m;
+	}
+
 	// Возвращает дальность поездки
 	int range() {
 		return fuelcap * mpg;
