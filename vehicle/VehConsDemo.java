@@ -1,21 +1,12 @@
 // В этом классе объявляется объект типа Vehicle
-class CompFuel {
+class VehConsDemo {
 	public static void main(String[] args) {
-		Vehicle minivan = new Vehicle();
-		Vehicle sportcar = new Vehicle();
+		// Создать объеты транспортных средств
+		Vehicle minivan = new Vehicle(7, 16, 21);
+		Vehicle sportcar = new Vehicle(2, 14, 12);
 		double gallons;
 		int dist = 252;
 
-		// Присвоить значения полям объекта minivan
-		minivan.passengers = 7;
-		minivan.fuelcap = 16;
-		minivan.mpg = 21;
-
-		// Присвоить значения полям объекта sportcar
-                sportcar.passengers = 2;
-                sportcar.fuelcap = 14;
-                sportcar.mpg = 12;
-		
 		gallons = minivan.fuelNeeded(dist);
 		System.out.println("Для поездки на расстояние " + dist
 			       	+ " миль минивэну требуется " 
