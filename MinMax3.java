@@ -5,9 +5,9 @@ class MinMax2 {
 		int min, max;		
 		min = max = nums[0];
 
-		for (int i = 0; i < 10; i++) {
-			if (nums[i] < min) min = nums[i];
-			if (nums[i] > max) max = nums[i];
+		for (int num : nums) {
+			if (num < min) min = num;
+			if (num > max) max = num;
 		}
 		System.out.println("Минимальное и максимальное значения: " + 
 				min + " " + max);
