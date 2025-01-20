@@ -3,7 +3,7 @@ class Triangle extends TwoDShape {
 	String style;
 
 	double area() {
-		return width * height / 2; // члены класса TwoDShapes доступны здесь
+		return getWidth() * getHeight() / 2; // доступ через геттеры
 	}
 
 	void showStyle() {
