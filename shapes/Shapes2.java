@@ -1,13 +1,13 @@
-class Shapes {
+class Shapes2 {
 	public static void main(String[] args) {
 		Triangle t1 = new Triangle();
 		Triangle t2 = new Triangle();
 
-		t1.width = 4.0;
-		t1.height = 4.0;
+		t1.setWidth(4.0);
+		t1.setHeight(4.0);
 		t1.style = "закрашенный";
 
-		t2.width = 8.0;                                                                        t2.height = 12.0;                                                                      t2.style = "контурный";
+		t2.setWidth(8.0);                                                                      t2.setHeight(12.0);                                                                    t2.style = "контурный";
 
 		System.out.println("Информация об объекте t1: ");
 		t1.showStyle();
