@@ -4,8 +4,8 @@ class Triangle extends TwoDShape {
 
 	// Конструктор
 	Triangle(String s, double w, double h) {
-		setWidth(w);
-		setHeight(h);
+		super(w, h); // вызов конструктора суперкласса
+    
 		style = s;
 	}
 
