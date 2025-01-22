@@ -1,4 +1,4 @@
-class Shapes3 {
+class Shapes4 {
 	public static void main(String[] args) {
 		Triangle t1 = new Triangle("закрашенный", 4.0, 4.0);
 		Triangle t2 = new Triangle("контурный", 8.0, 12.0);
