@@ -3,10 +3,20 @@ class TwoDShape {
 	private double width;   // теперь это
 	private double height;  // закрытые члены
 	
+	// Стандартный конструктор
+	TwoDShape() {
+		width = height = 0.0;
+	}
+
 	// Параметризованный конструктор
 	TwoDShape(double w, double h) {
 		width = w;
 		height = h;
+	}
+
+	// Конструктор объкта с одинаковой шириной и высотой
+	TwoDShape(double x) {
+		width = height = x;
 	}
 	
 	// Методы доступа для width и height
