@@ -21,6 +21,12 @@ class Triangle extends TwoDShape {
 		style = "закрашенный";
 	}
 
+	// Конструктор объекта из объкта
+	Triangle(Triangle ob) {
+		super(ob);  // передача объекта конструктору класса TwoDShape
+		style = ob.style;
+	}
+
 	double area() {
 		return getWidth() * getHeight() / 2; // доступ через геттеры
 	}
