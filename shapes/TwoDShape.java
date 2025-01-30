@@ -18,6 +18,12 @@ class TwoDShape {
 	TwoDShape(double x) {
 		width = height = x;
 	}
+
+	// Конструктор объекта из объекта
+	TwoDShape(TwoDShape ob) {
+		width = ob.width;
+		height = ob.height;
+	}
 	
 	// Методы доступа для width и height
 	double getWidth() { return width; }
