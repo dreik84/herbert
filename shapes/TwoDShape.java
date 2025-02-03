@@ -1,5 +1,6 @@
 // Класс для представления двумерных объектов
-class TwoDShape {
+abstract class TwoDShape {
+
 	private double width;   // теперь это
 	private double height;  // закрытые члены
 	private String name;
@@ -40,9 +41,7 @@ class TwoDShape {
 	void showDim() {
 		System.out.println("Ширина и высота: " + width + " и " + height);
 	}
-
-	double area() {
-		System.out.println("Метод area() должен быть переопределён.");
-		return 0.0;
-	}
+	
+	// Теперь этот метод абстрактный
+	abstract double area();
 }
