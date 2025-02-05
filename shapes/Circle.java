@@ -1,33 +1,25 @@
-// Подсласс TwoDShape для представления прямоугольников
-class Rectangle extends TwoDShape {
+// Подсласс TwoDShape для представления окружности
+class Circle extends TwoDShape {
+	private double radius = 0;
 
 	// Стандартный конструктор
-	Rectangle() {
+	Circle() {
 		super();
 	}
 
-	// Конструктор класса Rectangle
-	Rectangle(double w, double h) {
-		super(w, h, "прямоугольник");
-	}
-
-	// Конструктор квадрата
-	Rectangle(double x) {
-		super(x, "прямоугольник");
+	// Конструктор класса Circle
+	Circle(double r) {
+		super();
+		radius = r;
 	}
 
 	// Конструктор объекта из объкта
-	Rectangle(Rectangle ob) {
+	Circle(Circle ob) {
 		super(ob);
 	}
 	
-	boolean isSquare() {
-		if (getWidth() == getHeight()) return true;
-		return false;
-	}
-	
-	// Переопределение метода area() для Rectangle
+	// Переопределение метода area() для Circle
 	double area() {
-		return getWidth() * getHeight();
+		return Math.PI * radius * radius;
 	}
 }
