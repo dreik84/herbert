@@ -11,7 +11,6 @@ class Triangle extends TwoDShape {
 	// Конструктор
 	Triangle(String s, double w, double h) {
 		super(w, h, "треугольник"); // вызов конструктора суперкласса
-
 		style = s;
 	}
 

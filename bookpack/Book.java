@@ -1,7 +1,5 @@
 // Короткая демонстрация использования пакета
 package bookpack;
-
-public class Book {
 	// теперь эти члены защищенные
 	protected String title;
 	protected String author;
