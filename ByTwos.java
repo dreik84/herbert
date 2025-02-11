@@ -8,7 +8,7 @@ class ByTwos implements Series {
 		val = 0;
 	}
 
-	public int genNext() {
+	public int getNext() {
 		val += 2;
 		return val;
 	}
