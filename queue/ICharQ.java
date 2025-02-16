@@ -5,4 +5,7 @@ public interface ICharQ {
 
 	// Извлечь символ из очереди
 	char get();
+
+	// Сбросить очередь
+	// void reset();
 }
