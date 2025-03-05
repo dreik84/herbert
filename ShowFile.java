@@ -27,12 +27,13 @@ class ShowFile {
 			} while (i != -1);
 		} catch (IOException exc) {
 			System.out.println("Ошибка при чтении файла");
-		}
-
-		try {
-			fin.close();
-		} catch (IOException exc) {
-			System.out.println("Ошибка при закрытии файла");
-		}
+		} finally {
+			// Закрытие файла при выходе из блока try
+			try {
+                                fin.close();
+                        } catch (IOException exc) {
+                                System.out.println("Ошибка при закрытии файла");
+                        }
+		}	
 	}
 }
