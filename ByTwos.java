@@ -11,7 +11,6 @@ class ByTwos implements Series {
 	}
 
 	public int getNext() {
-		prev = val;
 		val += 2;
 		return val;
 	}

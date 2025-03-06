@@ -10,7 +10,7 @@ class ShowFile {
 			System.out.println("Использование: ShowFile имя-файла");
 			return;
 		}
-		
+    
 		// Оператор try с ресурсами
 		try (FileInputStream fin = new FileInputStream(args[0])) {
 
@@ -22,7 +22,6 @@ class ShowFile {
 
 		} catch (IOException exc) {
 			System.out.println("Ошибка ввода-вывода: " + exc);
-
 		}	
 	}
 }
