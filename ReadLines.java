@@ -1,20 +1,21 @@
-// Использование BufferedReader для чтения символов с консоли
+// Чтение строки с применением BufferedReader
 import java.io.*;
 
-class ReadChars {
+class ReadLines {
 	public static void main(String[] args) throws IOException {
 		
-		char c;
+		String str;
 
 		BufferedReader br = new BufferedReader(new 
 			InputStreamReader(System.in, System.console().charset()));
 
-		System.out.println("Вводите символы; для выхода введите точку.");
-		// Читать символы
+		System.out.println("Вводите строки текта");
+		System.out.println("Для завершения введите stop");
+		
 		do {
-			c = (char) br.read();
-			System.out.println(c);
+			str = br.readLine();
+			System.out.println(str);
 
-		} while(c != '.');
+		} while (!str.equals("stop"));
 	}
 }
