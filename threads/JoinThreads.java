@@ -1,5 +1,5 @@
-// Создание нескольких потоков
-class MoreThreads {
+// Использование join()
+class JoinThreads {
 	public static void main(String[] args) {
 		System.out.println("Главный поток запущен");
 
@@ -7,18 +7,17 @@ class MoreThreads {
 		MyThread mt2 = MyThread.createAndStart("Child #2");
 		MyThread mt3 = MyThread.createAndStart("Child #3");
 
-		do {
-			System.out.print(".");
-
-                        try {
-                                Thread.sleep(100);
-                        }
-                        catch (InterruptedException exc) {
-                                System.out.println("Главный поток прерван");
-                        }
-		} while (mt1.thrd.isAlive() || 
-			 mt2.thrd.isAlive() || 
-			 mt3.thrd.isAlive());  // Пока не завершатся все потоки
+		try {
+			mt1.thrd.join();
+			System.out.println("Поток Child #1 присоединен");
+			mt2.thrd.join();
+                        System.out.println("Поток Child #2 присоединен");
+			mt3.thrd.join();
+                        System.out.println("Поток Child #3 присоединен");
+		} 
+		catch (InterruptedException exc) {
+                	System.out.println("Главный поток прерван");
+                }
 
 		System.out.println("Главный поток завершен");
 	}
