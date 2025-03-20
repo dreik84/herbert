@@ -19,7 +19,7 @@ class Sync {
 class SumArray {
 	private int sum;
 	
-	synchronized int sumArrray(int[] nums) {  // Метод синхронизирован
+	int sumArrray(int[] nums) {  // Метод синхронизирован
 		sum = 0; // сбросить sum
 		
 		for (int i = 0; i < nums.length; i++) {
@@ -40,7 +40,7 @@ class SumArray {
 
 class MyThread implements Runnable {
 	Thread thrd;
-	SumArray sa = new SumArray();
+	static SumArray sa = new SumArray();
 	int[] a;
 	int answer;
 
@@ -63,8 +63,10 @@ class MyThread implements Runnable {
 		int sum;
 
 		System.out.println("Поток " + thrd.getName() + " запущен");
-
-		answer = sa.sumArray(a);
+		
+		synchronized(sa) {
+			answer = sa.sumArray(a);
+		}
 		
 		System.out.println("Сумма в потоке " + thrd.getName() + 
 				" равна " + answer);
