@@ -1,4 +1,44 @@
 // Приостановка, возобновление и останов потока
+class Suspend {
+	public static void main(String[] args) {
+		MyThread mt1 = MyThread.createAndStart("My Thread");
+
+		try {
+			Thread.sleep(1000); // позволить потоку mt1 начать выполнение
+			mt1.mysuspend();
+			System.out.println("Приостановка потока");
+			
+			Thread.sleep(1000);
+			mt1.myresume();
+			System.out.println("Возобновление потока");
+
+			Thread.sleep(1000);
+                        mt1.mysuspend();
+                        System.out.println("Приостановка потока");
+
+			Thread.sleep(1000);
+                        mt1.myresume();
+                        System.out.println("Возобновление потока");
+
+			Thread.sleep(1000);
+                        mt1.mysuspend();
+                        System.out.println("Останов потока");
+			mt1.mystop();
+		}
+		catch (InterruptedException exc) {
+			System.out.println("Главный поток прерван");
+		}
+
+		// Ожидать завершения работы потока
+		try {
+			mt1.thrd.join();
+		}
+		catch (InterruptedException exc) {
+                        System.out.println("Главный поток прерван");
+                }
+		System.out.println("Главный поток завершен");
+	}
+}
 
 class MyThread implements Runnable {
 	Thread thrd;
@@ -33,7 +73,7 @@ class MyThread implements Runnable {
 
 				// Использовать блок synchronized для проверки
 				synchronized(this) {
-					while(suspected) {
+					while(suspended) {
 						wait();
 					}
 					if (stopped) break;
@@ -43,5 +83,23 @@ class MyThread implements Runnable {
 			System.out.println("Поток " + thrd.getName() + " прерван");
 		}
 		System.out.println("Поток " + thrd.getName() + " завершен");
+	}
+
+	// Остановить поток
+	synchronized void mystop() {
+		stopped = true;
+		suspended = false;
+		notify();
+	}
+
+	// Приостановить поток
+	synchronized void mysuspend() {
+		suspended = true;
+	}
+
+	// Возобновить выполнение потока
+	synchronized void myresume() {
+		suspended = false;
+		notify();
 	}
 }
