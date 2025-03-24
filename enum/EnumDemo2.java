@@ -1,39 +1,22 @@
-// Перечисление разнообразных транспортных средств
+// Использование встроенных методов перечисления
 enum Transport {
 	CAR, TRUCK, AIRPLAIN, TRAIN, BOAT // объявление перечислений
 }
 
-class EnumDemo {
+class EnumDemo2 {
 	public static void main(String[] args) {
-		Transport tp; // ссылка на Transport
+		Transport tp;
+		System.out.println("Все константы Transport: ");
 
-		tp = Transport.AIRPLAIN; // присваивание константы AIRPLAIN
+		// Использовать метод values()
+		Transport[] allTransports =Transport.values();
+		
+		for (Transport t : allTransports) System.out.println(t);
 
-		// Вывести значение перечисления
-		System.out.println("Значение tp: " + tp);
 		System.out.println();
 
-		// Сравнить два значения перечисления
-		if (tp == Transport.TRAIN) 
-			System.out.println("tp содержит TRAIN.\n");
-		
-		// Управление оператором switch
-		switch (tp) {
-			case CAR:
-				System.out.println("Автомобиль перевозит людей");
-				break;
-			case TRUCK:
-				System.out.println("Грузовик доставляет грузы");
-				break;
-			case AIRPLAIN:
-				System.out.println("Самолет летит");
-				break;
-			case TRAIN:
-				System.out.println("Поезд движется по рельсам");
-				break;
-			case BOAT:
-				System.out.println("Корабль плывет по воде");
-				break;
-		}
+		// Использовать метод valueOf() 
+		tp = Transport.valueOf("AIRPLAIN");
+		System.out.println("tp содержит " + tp);
 	}
 }
