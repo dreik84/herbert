@@ -1,39 +1,32 @@
-// Перечисление разнообразных транспортных средств
+// Демонстрация использования методов ordinal() и compareTo()
 enum Transport {
-	CAR, TRUCK, AIRPLAIN, TRAIN, BOAT // объявление перечислений
+	CAR, TRUCK, AIRPLANE, TRAIN, BOAT // объявление перечислений
 }
 
-class EnumDemo {
+class EnumDemo4 {
 	public static void main(String[] args) {
-		Transport tp; // ссылка на Transport
+		Transport tp, tp2, tp3; // ссылка на Transport
 
-		tp = Transport.AIRPLAIN; // присваивание константы AIRPLAIN
+		// Получить все порядковые значения с применением ordinal()
+		System.out.println("Все константы перечисления Transport" + 
+				" вместе с их порядковыми номерами");
+		for (Transport t : Transport.values())
+			System.out.println(t + " " + t.ordinal());
 
-		// Вывести значение перечисления
-		System.out.println("Значение tp: " + tp);
+		tp = Transport.AIRPLANE;
+		tp2 = Transport.TRAIN;
+		tp3 = Transport.AIRPLANE;
+
 		System.out.println();
 
-		// Сравнить два значения перечисления
-		if (tp == Transport.TRAIN) 
-			System.out.println("tp содержит TRAIN.\n");
-		
-		// Управление оператором switch
-		switch (tp) {
-			case CAR:
-				System.out.println("Автомобиль перевозит людей");
-				break;
-			case TRUCK:
-				System.out.println("Грузовик доставляет грузы");
-				break;
-			case AIRPLAIN:
-				System.out.println("Самолет летит");
-				break;
-			case TRAIN:
-				System.out.println("Поезд движется по рельсам");
-				break;
-			case BOAT:
-				System.out.println("Корабль плывет по воде");
-				break;
-		}
+		// Демонстрация использования compareTo()
+		if (tp.compareTo(tp2) < 0)
+			System.out.println(tp + " находится перед " + tp2);
+
+		if (tp.compareTo(tp2) > 0)
+                        System.out.println(tp2 + " находится перед " + tp);
+
+		if (tp.compareTo(tp3) == 0)
+                        System.out.println(tp + " равно " + tp3);
 	}
 }
