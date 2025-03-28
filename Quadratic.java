@@ -1,4 +1,8 @@
 // Решение квадратного уравнения
+// Статическое импортирование
+import static java.lang.Math.sqrt;
+import static java.lang.Math.pow;
+
 class Quadratic {
 	public static void main(String[] args) {
 		
@@ -11,11 +15,11 @@ class Quadratic {
 		c = -3;
 		
 		// Найти первый корень
-		x = (-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+		x = (-b + sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
 		System.out.println("Первый корень: " + x);
 		
 		// Найти второй корень
-		x = (-b - Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a);
+		x = (-b - sqrt(pow(b, 2) - 4 * a * c)) / (2 * a);
 		System.out.println("Второй корень: " + x);	
 	}
 }
