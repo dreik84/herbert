@@ -2,11 +2,11 @@ package userfuncsimp.binaryfunsimp;
 
 import userfuncs.binaryfuns.BinaryFunc;
 
-public class AbsPlus implements BinaryFunc {
+public class AbsMinus implements BinaryFunc {
 	
 	public String getName() {
-		return "absPlus";
+		return "absMinus";
 	}
 
-	public int func(int a, int b) { return Math.abs(a) + Math.abs(b); }
+	public int func(int a, int b) { return Math.abs(a) - Math.abs(b); }
 }
