@@ -25,7 +25,7 @@ public class MyModAppDemo {
 
 		// Найти поставщика для absPlus и получить функцию
 		for (BinFuncProvider bfp : ldr) {
-			if (bfp.get().getName().equals("absPlus") {
+			if (bfp.get().getName().equals("absPlus")) {
 				binOp = bfp.get();
 				break;
 			}
@@ -40,7 +40,7 @@ public class MyModAppDemo {
 
 		// Найти поставщика для absMinus и получить функцию
                 for (BinFuncProvider bfp : ldr) {
-                        if (bfp.get().getName().equals("absMinus") {
+                        if (bfp.get().getName().equals("absMinus")) {
                                 binOp = bfp.get();
                                 break;
                         }
