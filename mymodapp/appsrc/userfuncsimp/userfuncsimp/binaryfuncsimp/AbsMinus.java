@@ -1,6 +1,6 @@
 package userfuncsimp.binaryfunsimp;
 
-import userfuncs.binaryfuns.BinaryFunc;
+import userfuncs.binaryfuncs.BinaryFunc;
 
 public class AbsMinus implements BinaryFunc {
 	
