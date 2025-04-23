@@ -1,5 +1,5 @@
 // Определение модуля математических функций
-module appfuncs {
+open module appfuncs {
 	// Экспортировать пакет
 	exports appfuncs.simplefuncs;
 
