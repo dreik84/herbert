@@ -1,31 +1,22 @@
-// Использование традиционного оператора switch
-class TraditionalSwitch {
+// Преобразование оператора switch в выражение switch
+class SwitchExprDemo {
 	
 	enum ShipMethod { STANDARD, TRUCK, AIR, OVERNIGHT }
 
 	public static void main(String[] args) {
-		ShipMethod shipBy;
+		
 		int productID = 5099;
 
-		switch (productID) {
-			case 1774:
-			case 8708:
-			case 6709:
-				shipBy = ShipMethod.TRUCK;
-				break;
-			case 4657:
-			case 2195:
-			case 3621:
-			case 1887:
-				shipBy = ShipMethod.AIR;
-				break;
-			case 2907:
-			case 5099:
-				shipBy = ShipMethod.OVERNIGHT;
-				break;
+		ShipMethod shipBy =  switch (productID) {
+			case 1774, 8708, 6709:
+				yield ShipMethod.TRUCK;
+			case 4657, 2195, 3621, 1887:
+				yield ShipMethod.AIR;
+			case 2907, 5099:
+				yield ShipMethod.OVERNIGHT;
 			default:
-				shipBy = ShipMethod.STANDARD;
-		}
+				yield ShipMethod.STANDARD;
+		}; // точка с запятой здесь обязательна
 
 		System.out.println("Способ доставки товара с идентификатором " + 
 				productID + ": " + shipBy);
