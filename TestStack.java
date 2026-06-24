@@ -14,5 +14,8 @@ class TestStack {
 		System.out.println("Стек mystack2:");
                 for (int i = 0; i < 10; i++)
                         System.out.println(mystack2.pop());
+
+		// mystack1.tos = -3;       // ошибка
+		// mystack2.stck[3] = 100;  // ошибка
 	}
 }
