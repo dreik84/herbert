@@ -1,16 +1,17 @@
 // Этот класс реализует стек целых чисел
 class Stack {
 	
-	private int[] stck = new int[10];
+	private int[] stck;
 	private int tos;
 
-	Stack() {
+	Stack(int size) {
+		stck = new int[size];
 		tos = -1;
 	}
 
 	void push(int item) {
 		
-		if (tos == 9)
+		if (tos == stck.length - 1)
 			System.out.println("Стек полон");
 		else
 			stck[++tos] = item;

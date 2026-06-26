@@ -1,8 +1,8 @@
 class TestStack {
 	public static void main(String[] args) {
 		
-		Stack mystack1 = new Stack();
-		Stack mystack2 = new Stack();
+		Stack mystack1 = new Stack(5);
+		Stack mystack2 = new Stack(8);
 
 		for (int i = 0; i < 10; i++) mystack1.push(i);
 		for (int i = 10; i < 20; i++) mystack2.push(i);
