@@ -4,13 +4,13 @@ class DemoBoxWeight {
 		
 		// Объявить, разместить в памяти и инициализировать объекты Box
 		BoxWeidth mybox1 = new BoxWeidth(10, 20, 15, 34.3);
-		BoxWeidth mybox2 = new BoxWeidth(3, 6, 9, 0.076);
+		Box mybox2 = new BoxWeidth(3, 6, 9, 0.034);
 		double vol;
 
 		System.out.println("Volume is " + mybox1.volume());
 		System.out.println("Weidth is " + mybox1.weidth);
 		System.out.println("Volume is " + mybox2.volume());
-		System.out.println("Weidth is " + mybox2.weidth);
+		//System.out.println("Weidth is " + mybox2.weidth);
 	}
 }
 
@@ -23,6 +23,9 @@ class Box {
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
+	}
+
+	Box () {
 	}
 
 	double volume() {
@@ -45,4 +48,7 @@ class BoxWeidth extends Box {
                 this.depth = depth;
 		this.weidth = weidth;
         }
+
+	@Override
+	double volume() { return 0; }
 }
