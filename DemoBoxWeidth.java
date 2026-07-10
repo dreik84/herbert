@@ -23,9 +23,12 @@ class Box {
 		this.width = width;
 		this.height = height;
 		this.depth = depth;
+
+		System.out.println("Box constructor with arguments");
 	}
 
 	Box () {
+		System.out.println("Box constructor without arguments");
 	}
 
 	double volume() {
@@ -43,10 +46,10 @@ class BoxWeidth extends Box {
 	double weidth;
 
 	BoxWeidth(double width, double height, double depth, double weidth) {
-                this.width = width;
-                this.height = height;
-                this.depth = depth;
+                super(width, height, depth);
 		this.weidth = weidth;
+
+		System.out.println("BoxWeidth constructor");
         }
 
 	@Override
