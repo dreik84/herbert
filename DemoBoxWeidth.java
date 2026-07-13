@@ -7,12 +7,16 @@ class DemoBoxWeight {
 		Box mybox2 = new BoxWeidth(3, 6, 9, 0.034);
 		Box mybox3 = new BoxWeidth();
 		Box myBox4 = new BoxWeidth(2, 7);
+		Shipment shipment1 = new Shipment(10, 20, 30, 40, 50);
+		BoxWeidth shipment2 = new Shipment();
 		double vol;
 
 		System.out.println("Volume is " + mybox1.volume());
 		System.out.println("Weidth is " + mybox1.weight);
 		System.out.println("Volume is " + mybox2.volume());
 		//System.out.println("Weidth is " + mybox2.weight);
+		System.out.println("Volume is " + shipment1.volume());
+		//System.out.println("Cost is " + shipment2.cost);
 	}
 }
 
@@ -84,4 +88,26 @@ class BoxWeidth extends Box {
 
 	@Override
 	double volume() { return 0; }
+}
+
+class Shipment extends BoxWeidth {
+	double cost;
+
+	Shipment(Shipment ob) {
+		super(ob);
+		cost = ob.cost;
+	}
+
+	Shipment(double width, double height, double depth, double weight, double cost) {
+		super(width, height, depth, weight);
+		this.cost  = cost;
+	}
+
+	Shipment() {
+	}
+
+	Shipment(double len, double weight, double cost) {
+		super(len, weight);
+		this.cost = cost;
+	}
 }
