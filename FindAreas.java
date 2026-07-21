@@ -1,19 +1,19 @@
-// Использование полиморфизма во время выполнения
+// Использование полиморфизма во время выполнения и абстактных методов
 
 class FindAreas {
 	public static void main(String[] args) {
 		
-		Figure f = new Figure(10, 10);
+		// Figure f = new Figure(10, 10); // abstract
 		Figure r = new Rectangle(9, 5);
 		Figure t = new Triangle(10, 8);
 
-		System.out.println("Area: " + f.area());
+		// System.out.println("Area: " + f.area());
 		System.out.println("Area: " + r.area());
 		System.out.println("Area: " + t.area());
 	}
 }
 
-class Figure {
+abstract class Figure {
 	double dim1;
 	double dim2;
 
@@ -22,10 +22,7 @@ class Figure {
 		dim2 = b;
 	}
 
-	double area() {
-		System.out.println("area figure");
-		return 0;
-	}
+	abstract double area() ;
 }
 
 class Rectangle extends Figure {
