@@ -1,9 +1,13 @@
 class Client implements Callback {
 	public static void main(String[] args) {
 		
-		Client c = new Client();	
+		Callback c = new Client();
+		AnotherClient ac = new AnotherClient();
 		c.callback(2);
-		c.nonIfaceMeth();
+		//c.nonIfaceMeth();
+		c = ac;
+		c.callback(2);
+
 
 	}
 
@@ -13,6 +17,13 @@ class Client implements Callback {
 
 	void nonIfaceMeth() {
 		System.out.println("собственный метод класса");
+	}
+}
+
+class AnotherClient implements Callback {
+	
+	public void callback(int p) {
+		System.out.println("callback() from AnotherCallback");
 	}
 }
 
