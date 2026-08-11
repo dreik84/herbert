@@ -20,7 +20,10 @@ interface B {
 }
 
 interface C extends A, B {
-	void meth3();
+
+	default void meth3() {
+		System.out.println("Реализация meth3()");
+	}
 }
 
 class MyClass implements C {
@@ -33,7 +36,7 @@ class MyClass implements C {
                 System.out.println("Реализация meth2()");
         }
 
-	public void meth3() {
-                System.out.println("Реализация meth3()");
-        }
+	//public void meth3() {
+        //        System.out.println("Реализация meth3()");
+        //}
 }
