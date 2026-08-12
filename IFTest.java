@@ -17,6 +17,9 @@ class IFTest {
                         System.out.print(dynStack.pop() + " ");
 
 		System.out.println();
+
+		fixedStack.clear();
+		dynStack.clear();
 	}
 }
 
@@ -84,4 +87,8 @@ class FixedStack implements IntStack {
 interface IntStack {
 	void push(int value);
 	int pop();
+
+	default void clear() {
+		System.out.println("Метод clear не реализован");
+	}
 }
