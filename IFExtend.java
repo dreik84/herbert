@@ -8,21 +8,34 @@ class IFExtend {
 		ob.meth1();
 		ob.meth2();
 		ob.meth3();
+		ob.meth4();
 	}
 }
 
 interface A {
 	void meth1();
+
+	default void meth4() {
+		System.out.println("meth4 in A");
+	}
 }
 
 interface B {
 	void meth2();
+
+	default void meth4() {
+                System.out.println("meth4 in B");
+        }
 }
 
 interface C extends A, B {
 
 	default void meth3() {
 		System.out.println("Реализация meth3()");
+	}
+
+	default void meth4() {
+		A.super.meth4();
 	}
 }
 
@@ -36,7 +49,7 @@ class MyClass implements C {
                 System.out.println("Реализация meth2()");
         }
 
-	//public void meth3() {
-        //        System.out.println("Реализация meth3()");
+	//public void meth4() {
+        //        System.out.println("Реализация meth4()");
         //}
 }
