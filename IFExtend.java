@@ -9,6 +9,10 @@ class IFExtend {
 		ob.meth2();
 		ob.meth3();
 		ob.meth4();
+
+		A.statMeth();
+		// C.statMeth();
+		// ob.statMeth();
 	}
 }
 
@@ -18,6 +22,10 @@ interface A {
 	default void meth4() {
 		System.out.println("meth4 in A");
 	}
+
+	static void statMeth() {
+                System.out.println("statMeth in A");
+        }
 }
 
 interface B {
