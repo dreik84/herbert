@@ -4,7 +4,7 @@ class ThreadDemo {
 	public static void main(String[] args) {
 		
 		NewThread nt = new NewThread();
-		nt.t.run();
+		nt.t.start();
 
 		try {
 			for (int i = 5; i > 0; i--) {
