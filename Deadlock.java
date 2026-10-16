@@ -1,5 +1,35 @@
 // Пример возникновения взаимоблокировки
 
+class Deadlock implements Runnable {
+	A a = new A();
+	B b = new B();
+	Thread t;
+
+	Deadlock() {
+		Thread.currentThread().setName("MainThread");
+		t = new Thread(this, "RacingThread");
+	}
+
+	void deadlockStart() {
+		
+		t.start();
+		a.foo(b);
+		System.out.println("Назад в главный поток");
+	}
+
+	public void run() {
+		
+		b.bar(a);
+		System.out.println("Назад в главный поток");
+	}
+
+	public static void main(String[] args) {
+		
+		Deadlock dl = new Deadlock();
+		dl.deadlockStart();
+	}		
+		
+}
 
 class A {
 	synchronized void foo(B b) {
@@ -14,6 +44,10 @@ class A {
 
 		System.out.println(name + " пытается вызвать B.last");
 		b.last();
+	}
+
+	synchronized void last() {
+		System.out.println("Внутри A.last");
 	}
 }
 
@@ -30,5 +64,9 @@ class B {
 
                 System.out.println(name + " пытается вызвать A.last");
                 a.last();
+        }
+
+	synchronized void last() {
+                System.out.println("Внутри B.last");
         }
 }
