@@ -3,8 +3,10 @@
 class ThreadDemo {
 	public static void main(String[] args) {
 		
-		NewThread nt = new NewThread();
-		nt.t.start();
+		//NewThread nt = new NewThread();
+		//nt.t.start();
+		
+		NewThread nt = NewThread.createAndStart();
 
 		try {
 			for (int i = 5; i > 0; i--) {
@@ -25,6 +27,13 @@ class NewThread implements Runnable {
 	NewThread() {
 		t = new Thread(this, "Demo Thread");       // Создание потока
 		System.out.println("Дочерний поток " + t);
+	}
+
+	public static NewThread createAndStart() {
+		NewThread myThrd = new NewThread();
+		myThrd.t.start();
+		
+		return myThrd;
 	}
 
 	// Точка входа для второго потока
