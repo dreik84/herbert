@@ -4,8 +4,8 @@ import java.lang.reflect.*;
 
 class Meta {
 	
-	@MyAnno(str = "Пример аннотации", val = 100)
-	public static void myMeth() {
+	@MyAnno(str = "Пример аннотации 2", val = 10)
+	public static void myMeth(String str, int i) {
 		
 		Meta ob = new Meta();
 
@@ -13,7 +13,7 @@ class Meta {
 			//Class<?> c = ob.getClass();
 			Class<?> c = Meta.class;
 
-			Method m = c.getMethod("myMeth");
+			Method m = c.getMethod("myMeth", String.class, int.class);
 
 			MyAnno anno = m.getAnnotation(MyAnno.class);
 
@@ -25,7 +25,7 @@ class Meta {
 	}
 
 	public static void main(String[] args) {
-		myMeth();
+		myMeth("test", 1);
 	}
 }
 
